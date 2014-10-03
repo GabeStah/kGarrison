@@ -30,9 +30,14 @@ gem 'ajax-datatables-rails', github: 'GabeStah/ajax-datatables-rails'
 # Settings
 gem 'settingslogic'
 
+gem 'nokogiri'
+
+gem 'unicorn'
+
 group :development, :test do
   # Deployment
-  gem 'mina'
+  #gem 'mina'
+  gem 'capistrano', '~>2.15'
   # Testing
   gem 'rspec-rails'
   gem 'spring'
