@@ -143,6 +143,8 @@ GEM
     redis (3.1.0)
     redis-namespace (1.5.1)
       redis (~> 3.0, >= 3.0.4)
+    render_csv (2.0.0)
+      rails (>= 3.0)
     rspec-core (3.1.5)
       rspec-support (~> 3.1.0)
     rspec-expectations (3.1.2)
@@ -229,6 +231,7 @@ DEPENDENCIES
   nokogiri
   pg
   rails (= 4.1.1)
+  render_csv
   rspec-rails
   sass-rails
   sdoc (~> 0.4.0)

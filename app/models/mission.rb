@@ -30,6 +30,18 @@ class Mission < ActiveRecord::Base
             allow_blank: true,
             numericality: true
 
+  def ability_list
+    if self.abilities
+      self.abilities.map(&:name).join(',')
+    end
+  end
+
+  def flag_list
+    if self.flags
+      self.flags.map(&:name).join(',')
+    end
+  end
+
   def remote_update
     url = "http://#{Settings.subdomain}.wowdb.com/garrison/missions/#{self.id}"
     doc = Nokogiri::HTML(open(url).read)

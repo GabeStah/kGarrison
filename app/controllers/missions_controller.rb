@@ -1,6 +1,10 @@
 class MissionsController < ApplicationController
   def index
     respond_to do |format|
+      format.csv do
+        @missions = Mission.all.order(:name).eager_load(:abilities, :flags)
+        render csv: @missions, add_methods: [:ability_list, :flag_list]
+      end
       format.html
       format.json do
         render json: MissionDatatable.new(view_context)

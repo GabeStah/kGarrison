@@ -44,6 +44,9 @@ gem 'sidekiq-failures'
 gem 'capistrano-sidekiq' , github: 'seuros/capistrano-sidekiq'
 gem 'sidetiq'
 
+# CSV support
+gem 'render_csv'
+
 group :development, :test do
   # Deployment
   #gem 'mina'
