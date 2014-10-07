@@ -11,9 +11,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20141006084202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "abilities", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "abilities_missions", id: false, force: true do |t|
+    t.integer "ability_id"
+    t.integer "mission_id"
+  end
+
+  add_index "abilities_missions", ["ability_id", "mission_id"], name: "by_ability_and_mission", unique: true, using: :btree
+
+  create_table "flags", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "flags_missions", id: false, force: true do |t|
+    t.integer "flag_id"
+    t.integer "mission_id"
+  end
+
+  add_index "flags_missions", ["flag_id", "mission_id"], name: "by_flag_and_mission", unique: true, using: :btree
+
+  create_table "missions", force: true do |t|
+    t.integer  "cooldown"
+    t.integer  "cost"
+    t.integer  "duration"
+    t.integer  "followers"
+    t.integer  "item_level"
+    t.integer  "level"
+    t.string   "location"
+    t.string   "mechanic"
+    t.string   "name"
+    t.integer  "reward"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

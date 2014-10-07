@@ -1,0 +1,40 @@
+[
+  {
+    "field": "level",
+    "regex": "^Level: (\\d+)"
+  },
+  {
+    "field": "item_level",
+    "regex": "^Required Item Level: (\\d+)"
+  },
+  {
+    "field": "followers",
+    "regex": "^Followers: (\\d+)"
+  },
+  {
+    "duration": true,
+    "field": "duration",
+    "regex": "^Duration: (\\d+\\.?\\d*)"
+  },
+  {
+    "duration": true,
+    "field": "cooldown",
+    "regex": "^Cooldown Time: (.+)"
+  },
+  {
+    "field": "location",
+    "regex": "^Location: (.+)"
+  },
+  {
+    "field": "flag",
+    "regex": "(^Exhausting)"
+  },
+  {
+    "field": "flag",
+    "regex": "(^Rare)"
+  },
+  {
+    "field": "mechanic",
+    "regex": "(^Mechanic): "
+  }
+]

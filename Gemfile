@@ -12,7 +12,7 @@ gem 'sass-rails'
 gem 'autoprefixer-rails'
 
 gem 'jquery-rails'
-gem 'turbolinks'
+#gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
@@ -26,13 +26,23 @@ gem 'bootstrap-will_paginate'
 # DataTables
 gem 'jquery-datatables-rails', '~> 2.2.1'
 # Ajax DataTables integration
-gem 'ajax-datatables-rails', github: 'GabeStah/ajax-datatables-rails'
+gem 'ajax-datatables-rails', github: 'GabeStah/ajax-datatables-rails', ref: '075707b81923a1b0b5dd599526151d30fc81aba7'
 # Settings
 gem 'settingslogic'
 
 gem 'nokogiri'
 
 gem 'unicorn'
+gem 'htmlentities'
+
+gem 'chronic'
+
+# Enabled for Sidekiq frontend
+gem 'sinatra', '>= 1.3.0', :require => nil
+gem 'sidekiq', github: 'mperham/sidekiq'
+gem 'sidekiq-failures'
+gem 'capistrano-sidekiq' , github: 'seuros/capistrano-sidekiq'
+gem 'sidetiq'
 
 group :development, :test do
   # Deployment

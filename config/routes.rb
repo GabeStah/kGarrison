@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
+  # Added for Sidekiq frontend
+  require 'sidekiq/web'
+  require 'sidetiq/web'
+  mount Sidekiq::Web => '/sidekiq', as: 'sidekiq'
+
   root 'static_pages#index'
+  #resources :missions, only: [:index]
+  get 'missions' => 'missions#index', as: :missions
+  get 'missions/update' => 'missions#update', as: :missions_update
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

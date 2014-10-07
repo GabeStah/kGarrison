@@ -1,0 +1,26 @@
+defaults: &defaults
+  cost:
+    header_name: 'Cost'
+    item_name: 'Garrison Resources'
+  durations:
+    sec: 1
+    min: 60
+    hr: 3600
+    day: 86400
+  encounters:
+    header_name: 'Encounters'
+  info:
+    header_name: 'Quick Info'
+  reward:
+    header_name: 'Rewards'
+    item_name: 'Garrison Resources'
+  subdomain: 'beta'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

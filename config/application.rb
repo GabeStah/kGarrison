@@ -7,6 +7,7 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
+require 'sidekiq/api'
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -16,6 +17,9 @@ Bundler.require(*Rails.groups)
 module KGarrison
   class Application < Rails::Application
     config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += Dir[File.join(Rails.root, "lib", "core_ext", "*.rb")].each {|l| require l }
+    # config.autoload_paths << Rails.root.join('lib')
+    # config.autoload_paths << Rails.root.join('lib/core_ext')
     config.encoding = 'utf-8'
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
